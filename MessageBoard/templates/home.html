@@ -1,0 +1,16 @@
+{%extends 'base.html' %} {% block content %}
+
+<h1>MESSAGE BOARD</h1>
+
+<a href="{% url 'add_post' %}">ADD NEW MESSAGE</a>
+
+<ul>
+  {% for post in object_list %}
+  <li>
+    <a href="{% url 'article-detail' post.pk %"></a>
+    {{post.body}}<br />
+    {{ post.author}}<br />{{post.post_date}}
+  </li>
+  {% endfor%}
+</ul>
+{% endblock %}
